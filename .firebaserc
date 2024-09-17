@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "barcatscleaning"
+  },
+  "targets": {},
+  "etags": {
+    "barcatscleaning": {
+      "extensionInstances": {}
+    }
+  },
+  "dataconnectEmulatorConfig": {}
+}

@@ -1,0 +1,29 @@
+// pages/api/posts/delete.ts
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { db } from '../../../app/utils/fbase';
+import { doc, deleteDoc, getDoc } from 'firebase/firestore';
+import { withAuth } from '../../../lib/authMiddleware';
+
+const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+  if (req.method !== 'DELETE') {
+    return res.status(405).json({ message: 'Method Not Allowed' });
+  }
+
+  try {
+    const { id } = req.body;
+    const uid = (req as any).uid;
+    const docRef = doc(db, 'homepage', id);
+    const postDoc = await getDoc(docRef);
+
+    if (!postDoc.exists() || postDoc.data()?.uid !== uid) {
+      return res.status(404).json({ message: 'Service not found or access denied' });
+    }
+
+    await deleteDoc(docRef);
+    res.status(200).json({ message: 'Homage Page deleted' });
+  } catch (error) {
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+};
+
+export default withAuth(handler);

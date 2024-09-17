@@ -1,0 +1,40 @@
+{
+  "hosting": {
+    "site": "barcatscleaning",
+    "public": ".next",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  },
+  "rewrites": [
+    {
+      "source": "/sendEmail", 
+      "function": "sendEmail"
+    },
+    {
+      "source": "/api/**",  
+      "function": "nextApp"
+    },
+    {
+      "source": "**",  
+      "function": "nextApp"
+    }
+  ],
+  "functions": {
+    "source": "functions",
+    "codebase": "default",
+    "ignore": [
+      "node_modules",
+      ".git",
+      "firebase-debug.log",
+      "firebase-debug.*.log",
+      "*.local"
+    ],
+    "predeploy": [
+      "npm --prefix \"$RESOURCE_DIR\" run lint",
+      "npm --prefix \"$RESOURCE_DIR\" run build"
+    ]
+  }
+}
