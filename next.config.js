@@ -27,6 +27,8 @@ const nextConfig = {
     NEXT_PUBLIC_FIREBASE_APP_ID: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
     NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID:
       process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+    NEXT_PUBLIC_SENDMAIL:
+      process.env.NEXT_PUBLIC_SENDMAIL,
   },
   reactStrictMode: true,
   distDir: ".next", 

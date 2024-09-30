@@ -54,4 +54,5 @@ export interface HomeProps {
     headerImg: string;
     sectionAboutImg: string;
     sectionServicesImg: string;
+    createdAt: Date | Timestamp; 
 }

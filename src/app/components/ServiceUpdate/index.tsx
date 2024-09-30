@@ -9,7 +9,9 @@ interface ServiceUpdateProps {
 export default function ServiceUpdate({ id, existingPost }: ServiceUpdateProps) {
   return (
     <div className="mt-12">
-      <h1 className="text-center text-lg font-bold">Update Service</h1>
+      <h1 className="text-center text-lg font-bold">
+        Update Service
+      </h1>
       {existingPost ? (
         <ServiceForm serviceId={id} existingPost={existingPost} />
       ) : (

@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
-import { TileHorizontal } from "../../components/TileHorizontal";
-import { Process } from "../../components/Process";
+import { TileHorizontal } from "@/app/components/TileHorizontal";
+import { Process } from "@/app/components/Process";
 import { Service } from "types";
 
 interface ServiceDetailProps {
@@ -9,12 +9,15 @@ interface ServiceDetailProps {
   otherServices: Service[];
 }
 
-export default function ServiceDetail({ service, otherServices }: ServiceDetailProps) {
+const ServiceDetail: React.FC<ServiceDetailProps> = ({
+  service,
+  otherServices,
+}) => {
   return (
     <>
-      <div className="py-24">
+      <div className="py-12 lg:py-24">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 mb-14 gap-4">
-          <div className="flex">
+          <div className="flex px-4">
             {service.imageUrl && (
               <Image
                 src={service.imageUrl}
@@ -27,17 +30,22 @@ export default function ServiceDetail({ service, otherServices }: ServiceDetailP
             )}
           </div>
           <div className="flex flex-col">
-            <h1 className="text-siteColor text-4xl font-bold mb-4">
+            <h1 className="text-siteColor text-4xl font-bold mb-4 text-center md:text-left">
               {service.title}
             </h1>
-            <div dangerouslySetInnerHTML={{ __html: service.content || "" }} />
+            <div
+              className="text-content px-4 md:px-0"
+              dangerouslySetInnerHTML={{ __html: service.content || "" }}
+            />
           </div>
         </div>
-        <div className="max-w-6xl mx-auto my-8 p-4">
+
+        <div className=" max-w-6xl mx-auto my-8 p-4">
           <Process />
         </div>
+
         <div className="bg-siteColor py-24">
-          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="px-4 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex items-center">
               <h1 className="text-6xl text-white font-bold mb-4">
                 What Makes Our Service Highly Effective?
@@ -60,20 +68,24 @@ export default function ServiceDetail({ service, otherServices }: ServiceDetailP
           </div>
         </div>
       </div>
-      <div className="max-w-6xl mx-auto py-16">
+
+      {/* Other Services Section */}
+      <div className="px-4 max-w-6xl mx-auto py-16">
         <h3 className="text-black text-4xl mb-8 font-bold">Other Services</h3>
-        <div className="flex gap-3">
+        <div className="flex lg:flex-row flex-col gap-3">
           {otherServices.map((otherService) => (
             <TileHorizontal
               key={otherService.slug}
               title={otherService.title}
               text={otherService.leadText}
               slug={otherService.slug}
-              imageUrl={otherService.imageUrl ?? ""}
+              imageUrl={otherService.imageUrl || ""}
             />
           ))}
         </div>
       </div>
     </>
   );
-}
+};
+
+export default ServiceDetail;

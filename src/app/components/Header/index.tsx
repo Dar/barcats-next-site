@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import Navbar from "../Navbar/Navbar";
-
+import Navigation from "../Navigation";
 const Header: React.FC = () => {
   const [showHeader, setShowHeader] = useState(true);
   const [isDesktop, setIsDesktop] = useState(false);
@@ -44,7 +43,7 @@ const Header: React.FC = () => {
         isDesktop && (showHeader ? 'translate-y-0' : '-translate-y-full')
       }`} 
     >
-      <Navbar />
+      <Navigation />
     </header>
   );
 };

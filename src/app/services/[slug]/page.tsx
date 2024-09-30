@@ -1,10 +1,9 @@
 import React from "react";
-import ServiceDetail from "@/app/components/ServiceDetail";
 import { db } from "@/app/utils/fbase";
 import { collection, query, getDocs } from "firebase/firestore";
+import ServiceDetail from "@/app/components/ServiceDetail";
 import { Service } from "types";
 
-// Fetch all service data
 async function getServiceData(slug: string) {
   const servicesQuery = query(collection(db, "services"));
   const querySnapshot = await getDocs(servicesQuery);
@@ -16,24 +15,11 @@ async function getServiceData(slug: string) {
   return { service, otherServices };
 }
 
-export async function generateStaticParams() {
-  const servicesQuery = query(collection(db, "services"));
-  const querySnapshot = await getDocs(servicesQuery);
-
-  const paths = querySnapshot.docs.map((doc) => {
-    const service = doc.data() as Service;
-    return { slug: service.slug };
-  });
-
-  return paths;
+interface ServicePageProps {
+  params: { slug: string };
 }
 
-// Page Component
-export default async function ServicesPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function ServicesPage({ params }: ServicePageProps) {
   const { slug } = params;
   const { service, otherServices } = await getServiceData(slug);
 
@@ -48,12 +34,25 @@ export default async function ServicesPage({
   );
 }
 
-// Generate metadata dynamically
-export async function generateMetadata({
+export async function generateStaticParams() {
+  const servicesQuery = query(collection(db, "services"));
+  const querySnapshot = await getDocs(servicesQuery);
+
+  const paths = querySnapshot.docs.map((doc) => {
+    const service = doc.data() as Service;
+    return {
+      slug: service.slug,
+    };
+  });
+
+  return paths;
+}
+
+export const generateMetadata = async ({
   params,
 }: {
   params: { slug: string };
-}) {
+}) => {
   const { slug } = params;
   const { service } = await getServiceData(slug);
 
@@ -68,7 +67,9 @@ export async function generateMetadata({
         url: `https://barcats.ca/services/${slug}`,
         images: [
           {
-            url: service.imageUrl || "https://barcats.ca/assets/barcats-cleaning-service.webp",
+            url:
+              service.imageUrl ||
+              "https://barcats.ca/assets/barcats-cleaning-service.webp",
             width: 800,
             height: 600,
             alt: service.title,
@@ -81,7 +82,9 @@ export async function generateMetadata({
         description: service.leadText,
         images: [
           {
-            url: service.imageUrl || "https://barcats.ca/assets/barcats-cleaning-service.webp",
+            url:
+              service.imageUrl ||
+              "https://barcats.ca/assets/barcats-cleaning-service.webp",
             width: 800,
             height: 600,
             alt: service.title,
@@ -95,4 +98,4 @@ export async function generateMetadata({
     title: "Service Not Found | Bar Cats Commercial Cleaning",
     description: "The service you are looking for does not exist.",
   };
-}
+};

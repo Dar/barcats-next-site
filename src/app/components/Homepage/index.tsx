@@ -1,4 +1,3 @@
-
 'use client';
 
 import { About } from "../About";
@@ -7,35 +6,26 @@ import ImageSection from "../ImageSection";
 import Services from "../Services";
 import { Testimonials } from "../Testimonials";
 import { Process } from "../Process";
-import React, { FC, useEffect, useState } from "react";
+import React, { FC } from "react";
 import { HomeProps } from "types";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/app/utils/fbase";
 import { CircularProgress } from "@mui/material";
 import { FormContainer } from "../FormContainer";
 
-const HomeTemplate:FC = () => {
-  const [homepageImage, setHomePageImage] = useState<HomeProps[]>([]);
-  const [loading, setLoading] = useState(true);
+interface HomeTemplateProps {
+  homepageImage: HomeProps[];
+}
 
-  useEffect(() => {
-    const fetchHomeData = async () => {
-      try {
-        const homepageCollection = collection(db, "homepage");
-        const homePageSnapshot = await getDocs(homepageCollection);
-        const homepageImageList = homePageSnapshot.docs.map(
-          (doc) => doc.data() as HomeProps
-        );
-        setHomePageImage(homepageImageList);
-      } catch (error) {
-        console.error("Error fetching services:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
+const HomeTemplate: FC<HomeTemplateProps> = ({ homepageImage }) => {
 
-    fetchHomeData();
-  }, []);
+  if (!homepageImage || homepageImage.length === 0) {
+    return (
+      <main className="h-[800px] flex justify-center items-center">
+        <p className="text-siteColor">
+          <CircularProgress />
+        </p>
+      </main>
+    );
+  }
 
   const content = (
     <>
@@ -60,6 +50,7 @@ const HomeTemplate:FC = () => {
       <Process />
     </>
   );
+
   const leadingText = (
     <h3 className="text-textColor text-center tracking-light text-[24px] lg:text-[32px] italic leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[640px] mb-5 lg:mb-5">
       &quot;You Never Get a Second Chance <br />
@@ -78,14 +69,6 @@ const HomeTemplate:FC = () => {
       </h2>
     </div>
   );
-
-  if(loading){
-    return <main className="h-[800px] flex justify-center items-center">
-      <p className="text-siteColor">
-        <CircularProgress />
-      </p>
-      </main>
-  }
 
   return (
     <main>
@@ -135,7 +118,5 @@ const HomeTemplate:FC = () => {
     </main>
   );
 }
-
-
 
 export default HomeTemplate;

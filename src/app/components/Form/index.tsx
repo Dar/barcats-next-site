@@ -57,11 +57,15 @@ const Form = () => {
     }
 
     setLoading(true); 
-
-    const res = await fetch("/api/sendEmail", {
+    const public_sendmail = '/api/sendEmail';
+    if (!public_sendmail) {
+      throw new Error("NEXT_PUBLIC_SENDMAIL environment variable is not defined.");
+    }
+    const res = await fetch(public_sendmail, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+
       },
       body: JSON.stringify({ name, email, message, honeypot }),
     });
@@ -69,12 +73,12 @@ const Form = () => {
     setLoading(false);
 
     if (res.ok) {
-      setSuccessMessage("Email sent successfully!");
+      setSuccessMessage("Your message was sent successfully!");
       setName("");
       setEmail("");
       setMessage("");
     } else {
-      setErrorMessage("Failed to send email. Please try again.");
+      setErrorMessage("Failed to send message. Please try again.");
     }
   };
 
