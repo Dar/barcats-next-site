@@ -61,6 +61,9 @@ export const generateMetadata = async ({
       title: `${service.title} | Bar Cats Commercial Cleaning`,
       description: service.leadText,
       keywords: `${service.title}, Services, ${service.title} Details, Bar Cats Commercial Cleaning`,
+      alternates: {
+        canonical: `https://barcats.ca/services/${slug}`,
+      },
       openGraph: {
         title: `${service.title} | Bar Cats Commercial Cleaning`,
         description: service.leadText,
@@ -90,6 +93,9 @@ export const generateMetadata = async ({
             alt: service.title,
           },
         ],
+      },
+      icons: {
+        icon: "/assets/favicon.ico",
       },
     };
   }

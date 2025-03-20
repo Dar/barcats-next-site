@@ -47,9 +47,9 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({
         <div className="bg-siteColor py-24">
           <div className="px-4 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="flex items-center">
-              <h1 className="text-6xl text-white font-bold mb-4">
+              <h2 className="text-6xl text-white font-bold mb-4">
                 What Makes Our Service Highly Effective?
-              </h1>
+              </h2>
             </div>
             <div className="flex flex-col justify-start p-4">
               <p className="text-[16px] mb-4 text-white">

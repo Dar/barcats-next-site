@@ -41,13 +41,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     { loc: `${siteUrl}/contact`, lastmod: new Date().toISOString() },
   ];
 
-//   const servicePages = services.map((service) => ({
-//     loc: `${siteUrl}/services/${service.slug}`,
-//     lastmod: new Date().toISOString(),
-//   }));
-  console.log(services)
+  const servicePages = services.map((service) => ({
+    loc: `${siteUrl}/services/${service.slug}`,
+    lastmod: new Date().toISOString(),
+  }));
 
-  const allPages = [...staticPages];
+  const allPages = [...staticPages, ...servicePages];
 
   const sitemap = generateSitemap(allPages);
 

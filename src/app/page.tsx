@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   description:
     "Bar Cats is a commercial cleaning company specializing in bars and restaurants in the core of downtown Toronto. Great reputation, reliable, fair rates.",
   keywords:
-    "Commercial cleaning services, Commercial cleaners Toronto, Restaurant cleaning, Bar cleaning, Restaurant cleaning services near me",
+    "Commercial cleaning, Commercial cleaning services, Commercial cleaners, Commercial cleaners Toronto, Restaurant cleaning, Bar cleaning, Restaurant cleaning services near me",
   robots: "index, follow",
   metadataBase: new URL("https://barcats.ca"),
   alternates: {
