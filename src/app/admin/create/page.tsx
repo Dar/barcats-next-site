@@ -19,9 +19,9 @@ export default function ServicesPage() {
       <ProtectedRoute>
         <section className="flex flex-col items-center justify-center px-10 py-20 bg-fixed bg-cover md:bg-cover min-h-screen">
           <div className="mt-12 w-full max-w-3xl">
-            <h1 className="text-center text-2xl font-bold mb-8">
+            <h2 className="text-center text-2xl font-bold mb-8">
               Services Admin
-            </h1>
+            </h2>
             <ServiceForm />
           </div>
           <div className="w-full max-w-3xl mt-12">

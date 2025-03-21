@@ -19,11 +19,11 @@ const HomeTemplate: FC<HomeTemplateProps> = ({ homepageImage }) => {
 
   if (!homepageImage || homepageImage.length === 0) {
     return (
-      <main className="h-[800px] flex justify-center items-center">
+      <div className="h-[800px] flex justify-center items-center">
         <p className="text-siteColor">
           <CircularProgress />
         </p>
-      </main>
+      </div>
     );
   }
 

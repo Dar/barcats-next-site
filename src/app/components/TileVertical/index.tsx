@@ -81,7 +81,7 @@ export const TileVertical = ({
         <CardActions className="mt-auto w-full justify-end self-start flex ">
           <Button
             buttonAction={() => handleServiceClick(slug)}
-            classNames="mt-10 px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            classNames="mt-10 px-4 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:text-hoverText  focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Read more
           </Button>

@@ -35,7 +35,7 @@ const Navigation = () => {
       <nav className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
         {/* Left Section: Logo */}
         <div className="flex items-center">
-          <h1
+          <div
             className={`${anton.className} text-siteColor m-0 py-1.25 font-bold tracking-widest uppercase sm:text-md md:text-2xl lg:text-2xl`}
           >
             <Link
@@ -49,7 +49,7 @@ const Navigation = () => {
               <br />
               SERVICES
             </Link>
-          </h1>
+          </div>
         </div>
 
         {/* Middle Section: Links (Hidden in Mobile) */}

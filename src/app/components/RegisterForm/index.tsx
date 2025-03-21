@@ -62,7 +62,7 @@ const Registration = () => {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100">
       <div className="w-full max-w-md p-8 space-y-6 bg-white rounded-lg shadow-md">
-        <h1 className="text-3xl font-semibold text-center text-gray-800">Register</h1>
+        <h2 className="text-3xl font-semibold text-center text-gray-800">Register</h2>
         {success && (
           <div className="p-4 mb-4 text-green-800 bg-green-200 rounded-lg">
             Registration successful! You can now log in.

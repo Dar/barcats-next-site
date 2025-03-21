@@ -30,9 +30,9 @@ const ServiceDetail: React.FC<ServiceDetailProps> = ({
             )}
           </div>
           <div className="flex flex-col">
-            <h1 className="text-siteColor text-4xl font-bold mb-4 text-center md:text-left">
+            <h2 className="text-siteColor text-4xl font-bold mb-4 text-center md:text-left">
               {service.title}
-            </h1>
+            </h2>
             <div
               className="text-content px-4 md:px-0"
               dangerouslySetInnerHTML={{ __html: service.content || "" }}

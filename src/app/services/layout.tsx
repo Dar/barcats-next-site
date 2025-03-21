@@ -7,8 +7,8 @@ export default function ServiceLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="mt-20 lg:mt-24">
-      <section
+    <section className="mt-20 lg:mt-24">
+      <div
         className="flex items-center min-h-36 lg:h-96 w-full bg-cover bg-center"
         style={{ 
           backgroundImage:`url(${serviceImages.src})` }}
@@ -18,8 +18,8 @@ export default function ServiceLayout({
             Our Services
           </h1>
         </div>
-      </section>
+      </div>
       {children}
-    </main>
+    </section>
   );
 }

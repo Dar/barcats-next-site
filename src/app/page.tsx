@@ -70,8 +70,6 @@ export default async function Home() {
   }
 
   return (
-    <main>
       <HomeTemplate homepageImage={homepageImage} />
-    </main>
   );
 }

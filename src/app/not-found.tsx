@@ -12,9 +12,9 @@ const NotFound: NextPage = () => {
      
       </section>
       <div className="py-10 text-center">
-      <h1 className="text-black text-center w-full text-[1.75rem] lg:text-[3.25rem] mt-3 font-bold drop-shadow-lg">
+      <h2 className="text-black text-center w-full text-[1.75rem] lg:text-[3.25rem] mt-3 font-bold drop-shadow-lg">
           404 - Page Not Found
-        </h1>
+        </h2>
         <p className="text-[1.25rem] lg:text-[1.25rem]">
           Sorry, the page you are looking for doesn&apos;t exist.
         </p>
