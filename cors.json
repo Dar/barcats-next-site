@@ -1,7 +1,14 @@
 [
     {
-      "origin": ["http://localhost:3000","http://127.0.0.1:5000", "https://barcats.ca"],
-      "method": ["GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS"],
+      "origin": [
+        "http://localhost:3000",      
+        "http://localhost:5000",
+        "http://127.0.0.1:5000",
+        "https://barcats.ca",
+        "https://barcatscleaning.firebaseapp.com",
+        "https://barcatscleaning.web.app"
+      ],
+      "methods": ["GET", "HEAD", "POST", "PUT", "DELETE", "OPTIONS"],
       "maxAgeSeconds": 3600,
       "responseHeader": ["Content-Type", "Authorization"]
     }

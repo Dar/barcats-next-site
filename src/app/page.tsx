@@ -6,11 +6,11 @@ import { HomeProps } from "types";
 
 // Metadata object
 export const metadata: Metadata = {
-  title: "Bar Cats Commercial Cleaning Services",
+  title: "Bar Cats | Commercial Cleaning Services ",
   description:
     "Bar Cats is a commercial cleaning company specializing in bars and restaurants in the core of downtown Toronto. Great reputation, reliable, fair rates.",
   keywords:
-    "Commercial cleaning, Commercial cleaning services, Commercial cleaners, Commercial cleaners Toronto, Restaurant cleaning, Bar cleaning, Restaurant cleaning services near me",
+    "commercial cleaning, deep cleaning services toronto, cleaning services toronto, commercial cleaners, deep cleaning,bar cleaning, cleaning services near me, commercial cleaning services toronto",
   robots: "index, follow",
   metadataBase: new URL("https://barcats.ca"),
   alternates: {

@@ -1,4 +1,3 @@
-// pages/api/posts/index.ts
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { db } from '../../../app/utils/fbase';
 import { collection, getDocs, query, where } from 'firebase/firestore';

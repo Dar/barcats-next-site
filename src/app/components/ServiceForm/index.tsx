@@ -20,10 +20,10 @@ interface ServiceFormProps {
 }
 
 const generateSlug = (title: string) => {
-  return title
+  return `commercial-cleaning-${title
     .toLowerCase()
     .replace(/[^a-z0-9]+/g, "-")
-    .replace(/(^-|-$)+/g, "");
+    .replace(/(^-|-$)+/g, "")}`;
 };
 
 const ServiceForm: React.FC<ServiceFormProps> = ({
@@ -107,19 +107,17 @@ const ServiceForm: React.FC<ServiceFormProps> = ({
 
     try {
       if (image) {
-        // Upload the original image with cache control
         const storageRef = ref(storage, `images/${Date.now()}-${image.name}`);
         const imageMetadata = {
-          cacheControl: 'public,max-age=31536000', // Cache for 1 year
+          cacheControl: 'public,max-age=31536000',
         };
         await uploadBytes(storageRef, image, imageMetadata);
         imageUrl = await getDownloadURL(storageRef);
 
-        // Create and upload the thumbnail image with cache control
         const thumbnailBlob = await createThumbnail(image);
         const thumbnailRef = ref(storage, `thumbnails/${Date.now()}-${image.name}`);
         const thumbnailMetadata = {
-          cacheControl: 'public,max-age=31536000', // Cache for 1 year
+          cacheControl: 'public,max-age=31536000',
         };
         await uploadBytes(thumbnailRef, thumbnailBlob, thumbnailMetadata);
         thumbnailUrl = await getDownloadURL(thumbnailRef);
@@ -131,7 +129,7 @@ const ServiceForm: React.FC<ServiceFormProps> = ({
         leadText,
         content,
         imageUrl,
-        thumbnailUrl, // Include the thumbnail URL in the post object
+        thumbnailUrl,
         createdAt: existingPost?.createdAt || new Date(),
       };
 
@@ -192,7 +190,7 @@ const ServiceForm: React.FC<ServiceFormProps> = ({
             Content
           </label>
           <CKEditor
-            editor={ClassicEditor}
+            editor={ClassicEditor as any} // Cast to 'any' to bypass type checking
             data={content}
             onReady={(editor) => {
               editor.editing.view.change((writer) => {

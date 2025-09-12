@@ -22,7 +22,7 @@ export const CONTENT = {
     },
     about: {
         title: "WHO WE ARE",
-        contentlead: "Bar Cats is a Commercial Cleaning Company specializing in bars and restaurants in the core of downtown Toronto",
+        contentlead: "Bar Cats is a commercial cleaning company specializing in bars and restaurants in the core of downtown Toronto",
         content: "We are a fully insured and bonded company, available:<br /> 24 hours a day, 7 days a week, 365 days a year."
     },
     contact: {

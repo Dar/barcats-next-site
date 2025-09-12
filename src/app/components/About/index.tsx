@@ -12,7 +12,7 @@ export const About = () => {
           WHO WE ARE
         </h2>
         <p className="text-textColor font-poppins text-[18px] font-normal leading-normal max-w-7xl">
-          Bar Cats is a Commercial Cleaning Company specializing in bars and
+          Bar Cats is a commercial cleaning company specializing in bars and
           restaurants in the core of downtown Toronto. Our team of experienced
           professionals is dedicated to maintaining the highest standards of
           cleanliness and hygiene, ensuring a safe and welcoming environment for
@@ -47,7 +47,7 @@ export const About = () => {
             </p>
           </div>
         </div>
-        <div className="mb-8 lg:mb-0 flex flex-1 gap-3 rounded border border-[#fec70b] bg-[#fff] p-4 flex-col">
+        {/* <div className="mb-8 lg:mb-0 flex flex-1 gap-3 rounded border border-[#fec70b] bg-[#fff] p-4 flex-col">
           <div className="flex gap-4 items-center">
             <Recycle
               color={"008000"}
@@ -65,7 +65,7 @@ export const About = () => {
               and pets.
             </p>
           </div>
-        </div>
+        </div> */}
         <div className="mb-8 lg:mb-0 flex flex-1 gap-3 rounded border border-[#fec70b] bg-[#fff] p-4 flex-col">
           <div className="flex gap-4 items-center">
             <HappyFace

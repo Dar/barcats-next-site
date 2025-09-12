@@ -5,6 +5,7 @@ import imagePath from "../../../assets/barcats-cleaning-service.webp";
 import serviceImages from "../../../assets/barcats-commercial-cleaning-restaurants-bars-pubs.png"
 import contactImage from "../../../assets/barcats-commercial-cleaning-contact.webp";
 import notFound from "../../../assets/404.webp";
+import socialNotFound from "../../../assets/barcats-cleaning-service-404.png";
 export {
     backgroundImage,
     imagePathFooter,
@@ -12,5 +13,6 @@ export {
     imagePath,
     serviceImages,
     contactImage,
-    notFound
+    notFound,
+    socialNotFound
 }

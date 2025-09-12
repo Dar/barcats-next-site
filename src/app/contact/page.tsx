@@ -123,9 +123,9 @@ function Contact() {
             </div>
           </div>
         </div>
-        <div className="md:w-1/2 p-4">
+        {/* <div className="md:w-1/2 p-4">
           <Form />
-        </div>
+        </div> */}
       </div>
     </>
   );

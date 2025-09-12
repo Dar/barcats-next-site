@@ -35,13 +35,11 @@ const Navigation = () => {
       <nav className="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between">
         {/* Left Section: Logo */}
         <div className="flex items-center">
-          <div
-            className={`${anton.className} text-siteColor m-0 py-1.25 font-bold tracking-widest uppercase sm:text-md md:text-2xl lg:text-2xl`}
-          >
+          <h1 className={`m-0 py-1.25`}>
             <Link
               href="/"
               title="Bar Cats Commercial Cleaning"
-              className="hover:text-hoverText"
+              className={`${anton.className} hover:text-hoverText text-siteColor uppercase sm:text-md md:text-2xl lg:text-2xl tracking-widest font-bold `}
             >
               BAR CATS
               <br />
@@ -49,7 +47,7 @@ const Navigation = () => {
               <br />
               SERVICES
             </Link>
-          </div>
+          </h1>
         </div>
 
         {/* Middle Section: Links (Hidden in Mobile) */}
@@ -70,33 +68,31 @@ const Navigation = () => {
             <Link
               replace
               href="/#services"
-              className="flex items-center hover:text-hoverText  text-siteColor py-2"
+              className="flex items-center hover:text-hoverText text-siteColor py-2"
             >
               Services
             </Link>
             <div
-              className="absolute hidden group-hover:flex bg-white rounded-md z-10 flex-col w-72 group-hover:block pt-4"
+              className="absolute hidden bg-white rounded-md z-10 flex-col w-72 group-hover:block pt-4"
               style={{ top: "calc(100% - 4px)" }}
             >
-              {" "}
-              {/* Close the gap */}
               <Link
                 replace
-                href="/services/bars-pubs"
-                className="block px-4 py-4 hover:text-hoverText  text-siteColor"
+                href="/services/commercial-cleaning-bars-pubs-clubs"
+                className="block px-4 py-4 hover:text-hoverText text-siteColor"
               >
-                Bars &amp; Pubs
-              </Link>
+                Bars, Pubs &amp; Clubs
+              </Link> 
               <Link
                 replace
-                href="/services/commercial-businesses"
+                href="/services/commercial-cleaning-commercial-businesses"
                 className="block px-4 py-4 hover:text-hoverText  text-siteColor"
               >
                 Commercial Businesses
               </Link>
               <Link
+                href="/services/commercial-cleaning-restaurants-diners-cafes"
                 replace
-                href="/services/restaurants-diners-cafes"
                 className="block px-4 py-4 hover:text-hoverText  text-siteColor"
               >
                 Restaurants, Diners &amp; Cafes
@@ -104,13 +100,13 @@ const Navigation = () => {
             </div>
           </div>
 
-          <Link
+          {/* <Link
             replace
             href="/#testimonials"
-            className="hover:text-hoverText  text-siteColor py-2"
+            className="hover:text-hoverText text-siteColor py-2"
           >
             Testimonials
-          </Link>
+          </Link> */}
           <Link
             replace
             href="/contact"
@@ -125,12 +121,12 @@ const Navigation = () => {
           <p className="text-textColor hover:text-hoverText text-xl lg:text-2xl text-center py-2">
             <Link href="tel:416-617-1979">(416) 617-1979</Link>
           </p>
-          <Button
+          {/* <Button
             buttonAction={() => router.push("/#contactForm")}
             classNames="bg-siteColor text-white px-3 py-2 rounded-full"
           >
             Get a free quote!
-          </Button>
+          </Button> */}
         </div>
 
         {/* Hamburger Menu (Visible in Mobile) */}

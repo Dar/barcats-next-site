@@ -13,9 +13,9 @@ export default function ContactLayout({
         style={{ backgroundImage: `url(${contactImage.src})` }}
       >
         <div className="text-center flex items-center justify-center h-full w-full bg-gray-900 bg-opacity-50">
-        <h1 className="text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] text-2xl font-poppins font-bold md:text-6xl">
+        <h2 className="text-white drop-shadow-[0_4px_4px_rgba(0,0,0,0.8)] text-2xl font-poppins font-bold md:text-6xl">
             Contact Us
-          </h1>
+          </h2>
         </div>
       </section>
       {children}

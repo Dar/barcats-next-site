@@ -4,7 +4,7 @@ import { About } from "../About";
 import Feature from "../Feature";
 import ImageSection from "../ImageSection";
 import Services from "../Services";
-import { Testimonials } from "../Testimonials";
+// import { Testimonials } from "../Testimonials";
 import { Process } from "../Process";
 import React, { FC } from "react";
 import { HomeProps } from "types";
@@ -29,10 +29,7 @@ const HomeTemplate: FC<HomeTemplateProps> = ({ homepageImage }) => {
 
   const content = (
     <>
-      <div>
-        <h2 className="text-black text-[1.75rem] lg:text-[2.25rem] max-w font-bold">
-          We specialize in tackling the toughest cleaning jobs.
-        </h2>
+      <div> 
         <p className="text-textColor mt-2">
           Stubborn stains doesn&apos;t make your environment feel spotless and
           inviting. Our experienced team uses top-quality products to handle
@@ -52,9 +49,8 @@ const HomeTemplate: FC<HomeTemplateProps> = ({ homepageImage }) => {
   );
 
   const leadingText = (
-    <h3 className="text-textColor text-center tracking-light text-[24px] lg:text-[32px] italic leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[640px] mb-5 lg:mb-5">
-      &quot;You Never Get a Second Chance <br />
-      to Make a First Impression&hellip; &quot;
+    <h3 className="text-textColor text-center tracking-light text-[22px] lg:text-[24px] bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[640px] mb-5 lg:mb-5">
+      &quot;You Never Get a Second Chance to Make a First Impression&hellip; &quot;
     </h3>
   );
 
@@ -94,7 +90,7 @@ const HomeTemplate: FC<HomeTemplateProps> = ({ homepageImage }) => {
       >
         <Services />
       </section>
-      <section
+      {/* <section
         id="testimonials"
         className="w-full px-6 lg:px-0 py-12 lg:pt-16 lg:pb-32"
       >
@@ -111,10 +107,10 @@ const HomeTemplate: FC<HomeTemplateProps> = ({ homepageImage }) => {
           </p>
         </div>
         <Testimonials />
-      </section>
-      <section id="contactForm" className="w-full px-0">
+      </section> */}
+      {/* <section id="contactForm" className="w-full px-0">
         <FormContainer text={formText} />
-      </section>
+      </section> */}
     </main>
   );
 }

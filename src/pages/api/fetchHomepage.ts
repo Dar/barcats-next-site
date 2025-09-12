@@ -1,5 +1,5 @@
 import { db } from '@/app/utils/fbase';
-import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 import { HomeProps } from 'types';
 
 export const fetchHomeData = async () => {

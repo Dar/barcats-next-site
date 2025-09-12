@@ -4,6 +4,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
   const placeId = process.env.NEXT_PUBLIC_PLACES_ID;
   const apiKey = process.env.NEXT_PUBLIC_GOOGLE_PLACES_API_KEY;
 
+  if (!apiKey) {
+    console.log('Google Places API Key is missing!');
+  } else {
+    console.log('Google Places API Key is present:', apiKey);
+  }
+
   if (!placeId || !apiKey) {
     return res.status(400).json({ error: 'Missing Place ID or API key' });
   }

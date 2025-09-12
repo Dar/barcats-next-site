@@ -40,10 +40,6 @@ export default function ImageSection({
       </div>
       {imageOnRight && (
         <div className="w-full md:w-1/2 p-4">
-          <div className="flex justify-around mb-3">
-            <p className="text-siteYellow text-2xl">Before</p>
-            <p className="text-siteYellow text-2xl">After</p>
-          </div>
           <Image
             src={imageSrc}
             alt={imageAlt}

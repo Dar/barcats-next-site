@@ -3,6 +3,7 @@ import { db } from "@/app/utils/fbase";
 import { collection, query, getDocs } from "firebase/firestore";
 import ServiceDetail from "@/app/components/ServiceDetail";
 import { Service } from "types";
+import { notFound } from "next/navigation";
 
 async function getServiceData(slug: string) {
   const servicesQuery = query(collection(db, "services"));
@@ -22,11 +23,11 @@ interface ServicePageProps {
 export default async function ServicesPage({ params }: ServicePageProps) {
   const { slug } = params;
   const { service, otherServices } = await getServiceData(slug);
-
+  
   if (!service) {
-    return <div>Service not found.</div>;
+    notFound();
   }
-
+  
   return (
     <>
       <ServiceDetail service={service} otherServices={otherServices} />
@@ -58,14 +59,14 @@ export const generateMetadata = async ({
 
   if (service) {
     return {
-      title: `${service.title} | Bar Cats Commercial Cleaning`,
+      title: `Commercial Cleaning | ${service.title} | Bar Cats`,
       description: service.leadText,
-      keywords: `${service.title}, Services, ${service.title} Details, Bar Cats Commercial Cleaning`,
+      keywords: `${service.title}, Services, ${service.title} details,cleaning services toronto,deep cleaning services toronto, Bar Cats Commercial Cleaning, commercial Cleaning, commercial cleaners, cleaning services near me, commercial cleaning services toronto`,
       alternates: {
         canonical: `https://barcats.ca/services/${slug}`,
       },
       openGraph: {
-        title: `${service.title} | Bar Cats Commercial Cleaning`,
+        title: `${service.title} | Bar Cats Commercial Cleaning Services`,
         description: service.leadText,
         url: `https://barcats.ca/services/${slug}`,
         images: [
