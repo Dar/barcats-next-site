@@ -121,12 +121,7 @@ const Navigation = () => {
           <p className="text-textColor hover:text-hoverText text-xl lg:text-2xl text-center py-2">
             <Link href="tel:416-617-1979">(416) 617-1979</Link>
           </p>
-          {/* <Button
-            buttonAction={() => router.push("/#contactForm")}
-            classNames="bg-siteColor text-white px-3 py-2 rounded-full"
-          >
-            Get a free quote!
-          </Button> */}
+       
         </div>
 
         {/* Hamburger Menu (Visible in Mobile) */}
@@ -154,61 +149,6 @@ const Navigation = () => {
                   </Link>
                 </ListItemText>
               </ListItem>
-
-              <ListItem button onClick={toggleServices}>
-                <ListItemText primary="Services" className="text-siteColor" />
-                {isServicesOpen ? <ExpandLess /> : <ExpandMore />}
-              </ListItem>
-              <Collapse in={isServicesOpen} timeout="auto" unmountOnExit>
-                <List component="div" disablePadding>
-                  <ListItem onClick={toggleDrawer(false)} className="pl-8">
-                    <ListItemText>
-                      <Link
-                        replace
-                        href="/services/bars-pubs"
-                        className="text-siteColor"
-                      >
-                        Bars &amp; Pubs
-                      </Link>
-                    </ListItemText>
-                  </ListItem>
-                  <ListItem onClick={toggleDrawer(false)} className="pl-8">
-                    <ListItemText>
-                      <Link
-                        replace
-                        href="/services/commercial-businesses"
-                        className="text-siteColor"
-                      >
-                        Commercial Businesses
-                      </Link>
-                    </ListItemText>
-                  </ListItem>
-                  <ListItem onClick={toggleDrawer(false)} className="pl-8">
-                    <ListItemText>
-                      <Link
-                        replace
-                        href="/services/restaurants-diners-cafes"
-                        className="text-siteColor"
-                      >
-                        Restaurants, Diners &amp; Cafes
-                      </Link>
-                    </ListItemText>
-                  </ListItem>
-                </List>
-              </Collapse>
-
-              <ListItem button onClick={toggleDrawer(false)}>
-                <ListItemText>
-                  <Link
-                    replace
-                    href="/#testimonials"
-                    className="text-siteColor"
-                  >
-                    Testimonials
-                  </Link>
-                </ListItemText>
-              </ListItem>
-
               <ListItem button onClick={toggleDrawer(false)}>
                 <ListItemText>
                   <Link replace href="/contact" className="text-siteColor">

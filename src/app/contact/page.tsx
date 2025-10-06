@@ -1,6 +1,5 @@
 import React from "react";
 import { Metadata } from "next";
-import Form from "../components/Form";
 import { Facebook, Instagram } from "../shared/Icons/Icons";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -123,9 +122,6 @@ function Contact() {
             </div>
           </div>
         </div>
-        {/* <div className="md:w-1/2 p-4">
-          <Form />
-        </div> */}
       </div>
     </>
   );
