@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
               <h3 className="mb-3 text-md font-semibold uppercase text-white">
                 Site Links
               </h3>
-              <ul className="text-gray-500 dark:text-gray-400 font-medium">
+              <ul className="text-gray-500 dark:text-gray-400 font-medium max-md:flex max-md:gap-4 max-md:mb-12">
                 <li className="mb-4">
                   <Link href="/" className="text-[#fff] hover:text-hoverText">
                     Home
@@ -63,14 +63,14 @@ const Footer: React.FC = () => {
                     About
                   </Link>
                 </li>
-                <li className="mb-4">
+                {/* <li className="mb-4">
                   <Link
                     href="/#services"
                     className="text-[#fff] hover:text-hoverText"
                   >
                     Services
                   </Link>
-                </li>
+                </li> */}
                 <li className="mb-4">
                   <Link
                     href="/contact"
@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
                         color={"ffc70b"}
                         size={16}
                       />
-                      <span className="xs:hidden ml-2 text-lg">
+                      <span className="xs:hidden ml-2 text-md">
                         (416) 617-1979
                       </span>
                     </a>
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
                         color={"ffc70b"}
                         size={16}
                       />
-                      <span className=" hover:text-hoverText ml-2 text-lg">
+                      <span className=" hover:text-hoverText ml-2 text-md">
                         {EMAIL}
                       </span>
                       <Tooltip title="Copy to clipboard">
@@ -132,7 +132,7 @@ const Footer: React.FC = () => {
                 <h2 className="mb-3 text-md font-semibold uppercase text-white">
                   Follow us
                 </h2>
-                <ul className="list-none">
+                <ul className="list-none max-md:flex max-md:gap-8">
                   <li className="flex items-center mb-2">
                     <a
                       href="https://www.facebook.com/barcats.ca"
@@ -144,7 +144,7 @@ const Footer: React.FC = () => {
                         color={"1877F2"}
                         size={24}
                       />
-                      <span className="ml-2 text-lg  hover:text-[#1877F2]">
+                      <span className="ml-2 text-md  hover:text-[#1877F2]">
                         Facebook
                       </span>
                     </a>
@@ -160,7 +160,7 @@ const Footer: React.FC = () => {
                         color={"f77737"}
                         size={24}
                       />
-                      <span className="ml-2 text-lg hover:text-[#f77737]">
+                      <span className="ml-2 text-md hover:text-[#f77737]">
                         Instagram
                       </span>
                     </a>

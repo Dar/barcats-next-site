@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { About } from "../About";
 import Feature from "../Feature";
@@ -16,7 +16,6 @@ interface HomeTemplateProps {
 }
 
 const HomeTemplate: FC<HomeTemplateProps> = ({ homepageImage }) => {
-
   if (!homepageImage || homepageImage.length === 0) {
     return (
       <div className="h-[800px] flex justify-center items-center">
@@ -29,9 +28,9 @@ const HomeTemplate: FC<HomeTemplateProps> = ({ homepageImage }) => {
 
   const content = (
     <>
-      <div> 
+      <div>
         <p className="text-textColor mt-2">
-          Stubborn stains doesn&apos;t make your environment feel spotless and
+          Stubborn stains don&apos;t make your environment feel spotless and
           inviting. Our experienced team uses top-quality products to handle
           even the most challenging cleaning tasks.
         </p>
@@ -50,7 +49,8 @@ const HomeTemplate: FC<HomeTemplateProps> = ({ homepageImage }) => {
 
   const leadingText = (
     <h3 className="text-textColor text-center tracking-light text-[22px] lg:text-[24px] bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[640px] mb-5 lg:mb-5">
-      &quot;You Never Get a Second Chance to Make a First Impression&hellip; &quot;
+      &quot;You Never Get a Second Chance to Make a First Impression&hellip;
+      &quot;
     </h3>
   );
 
@@ -68,51 +68,16 @@ const HomeTemplate: FC<HomeTemplateProps> = ({ homepageImage }) => {
 
   return (
     <main>
-      <Feature 
-        backgroundImage={homepageImage[0]?.headerImg} 
-        logo={homepageImage[0]?.logoImg} 
+      <Feature
+        backgroundImage={homepageImage[0]?.headerImg}
+        logo={homepageImage[0]?.logoImg}
       />
-      <section id="about" className="py-10 lg:py-24">
+      <section id="about" className="bg-siteColor py-10 lg:py-24">
         <About />
       </section>
-      <section className="md:py-10 lg:pb-36">
-        <ImageSection
-          imageSrc={homepageImage[0]?.sectionAboutImg}
-          imageAlt="Bar Cats Cleaning Cleaning Services - Before and After"
-          content={content}
-          imageOnRight={true}
-          lead={leadingText}
-        />
-      </section>
-      <section
-        id="services"
-        className="px-4 lg:px-0 py-10 lg:py-24 bg-siteColor flex content-center"
-      >
-        <Services />
-      </section>
-      {/* <section
-        id="testimonials"
-        className="w-full px-6 lg:px-0 py-12 lg:pt-16 lg:pb-32"
-      >
-        <div className="container mx-auto max-w-7xl px-3 lg:px-7 ">
-          <h2 className="mb-2 text-[#292939] text-center tracking-light text-[44px] leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] font-poppins font-bold">
-            Testimonials
-          </h2>
-          <p className="text-textColor lg:text-center tracking-light text-[16px] @[480px]:text-4xl @[480px]:font-black font-poppins">
-            Our clients consistently praise Bar Cats for our exceptional
-            attention to detail and reliable service. Many have noted how our
-            thorough cleaning practices have significantly improved the
-            cleanliness and ambiance of their establishments, making us their
-            go-to choice for commercial cleaning.
-          </p>
-        </div>
-        <Testimonials />
-      </section> */}
-      {/* <section id="contactForm" className="w-full px-0">
-        <FormContainer text={formText} />
-      </section> */}
+      <hr  className="text-white"/>
     </main>
   );
-}
+};
 
 export default HomeTemplate;

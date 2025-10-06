@@ -64,7 +64,7 @@ const Navigation = () => {
           </Link>
 
           {/* Services Dropdown */}
-          <div className="group relative">
+          {/* <div className="group relative">
             <Link
               replace
               href="/#services"
@@ -78,27 +78,27 @@ const Navigation = () => {
             >
               <Link
                 replace
-                href="/services/commercial-cleaning-bars-pubs-clubs"
+                href="#bars-pubs-clubs"
                 className="block px-4 py-4 hover:text-hoverText text-siteColor"
               >
                 Bars, Pubs &amp; Clubs
               </Link> 
               <Link
                 replace
-                href="/services/commercial-cleaning-commercial-businesses"
+                href="#commercial-businesses"
                 className="block px-4 py-4 hover:text-hoverText  text-siteColor"
               >
                 Commercial Businesses
               </Link>
               <Link
-                href="/services/commercial-cleaning-restaurants-diners-cafes"
+                href="#restaurants-diners-cafes"
                 replace
                 className="block px-4 py-4 hover:text-hoverText  text-siteColor"
               >
                 Restaurants, Diners &amp; Cafes
               </Link>
             </div>
-          </div>
+          </div> */}
 
           {/* <Link
             replace

@@ -47,9 +47,9 @@ export const viewport = "width=device-width,initial-scale=1";
 function Contact() {
   return (
     <>
-      <div className="text-textColor flex flex-col md:flex-row max-w-6xl mx-auto mt-8 p-4">
+      <div className="text-white flex flex-col md:flex-row max-w-6xl mx-auto mt-8 p-4">
         <div className="md:w-1/2 p-4">
-          <h2 className="text-black text-3xl lg:text-5xl font-bold mb-4">
+          <h2 className="text-[#fec70b] text-3xl lg:text-5xl font-bold mb-4">
             Get In Touch
           </h2>
           <p>
@@ -58,7 +58,7 @@ function Contact() {
           </p>
           <ul className="list-none mt-10">
             <li className="items-center mb-4 space-y-2">
-              <p className="flex font-bold text-black text-[18px]">Call Us</p>
+              <p className="flex font-bold text-[#fec70b] text-[18px]">Call</p>
               <p>
                 <a
                   className="flex items-center gap-4 hover:text-hoverText"
@@ -69,8 +69,8 @@ function Contact() {
               </p>
             </li>
             <li className="items-center mb-4 space-y-2">
-              <p className="flex text-black font-bold text-[18px]">
-                Send Email
+              <p className="flex text-[#fec70b] font-bold text-[18px]">
+                Email
               </p>
               <p>
                 <a
@@ -84,8 +84,8 @@ function Contact() {
             </li>
           </ul>
           <div className="w-full">
-            <p className="mb-4 text-siteColor font-bold text-[18px]">
-              Follow Us
+            <p className="mb-4 text-[#fec70b] font-bold text-[18px]">
+              Follow
             </p>
             <div className="flex flex-col gap-4">
               <div>

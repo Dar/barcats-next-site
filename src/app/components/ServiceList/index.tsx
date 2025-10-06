@@ -26,7 +26,7 @@ const ServiceList: React.FC = () => {
   const handleDelete = async (id: string) => {
     await deleteDoc(doc(db, "services", id));
   };
-
+  
   return (
     <div className="mt-10">
       <h2 className="text-lg font-bold mb-4">Existing Services</h2>
